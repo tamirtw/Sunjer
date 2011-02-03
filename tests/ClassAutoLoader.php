@@ -34,12 +34,8 @@ class ClassAutoLoader {
                         new RecursiveDirectoryIterator(
                                 $this->_searchPath
                                 , RecursiveIteratorIterator::SELF_FIRST));
-
         foreach ($oFiles as $fileInfo)
             $this->_classMap[$fileInfo->getBasename('.php')] = $fileInfo->getPathname();
-        echo "<pre>";
-        print_r($this->_classMap);
-        echo "</pre>";
     }
 
     private function setSearchPath($sPath) {
