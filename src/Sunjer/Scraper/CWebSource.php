@@ -13,11 +13,17 @@ class CWebSource {
     protected $get;
     protected $post;
     
-    public function __construct($url=NULL,$get=NULL,$post=NULL){
+    public function __construct($url=NULL,$get=array(),$post=array()){
+        //TODO ask Eli if in the extention we can assume that the url is one of those :
+        //http://www.walla.co.il/ , http://www.walla.co.il/key=value
+        //www.walla.co.il/ , www.walla.co.il/key=value
+       
+
         $this->setURL($url);
         $this->setGetValues($get);
+
         //setPostValues is optionsl , you can add them later.
-        $this->setGetValues($post);
+        $this->setPostValues($post);
     }
 
     public function setURL($url){
@@ -27,13 +33,13 @@ class CWebSource {
 
     public function setGetValues($get){
         if(is_array($get))
-        $this->get = $get;
+         $this->get = $get;
         else throw new CException('Get is not array');
     }
 
     public function setPostValues($post){
         if(is_array($post))
-        $this->get = $post;
+         $this->post = $post;
         else throw new CException('Post is not array');
     }
 
@@ -51,9 +57,21 @@ class CWebSource {
 
     public function isValidURL()
     {
-//        return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url);
-        throw new CException('URL is not Valid');
+        if(preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i',$this->url) > 0)
+            $this->parsingUrl ($this->url);
+        else
+            throw new CException('URL is not Valid');
+    }
+
+    public function parsingUrlAndInsertGetValues($url){
+        //This is an optional function that Sunjer is provide for you
+        //if our parse is not ok for your use , you can change it .
         
+        $parse = parse_url($url);
+        if(array_key_exists('scheme',$parse))
+            return $this->url=$parse['scheme'].'://'.$parse['host'].'/';
+        else
+            return $this->url=strstr($url, '/',true);
     }
 }
 
