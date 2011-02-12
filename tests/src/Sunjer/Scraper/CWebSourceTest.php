@@ -8,19 +8,68 @@ class CWebSourceTest extends PHPUnit_Framework_TestCase {
     /**
      * @var CWebSource
      */
-    protected $object;
+    protected $objectUrlValid;
+    protected $objectNull;
+    protected $objectUrlNotValid;
 
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->object = new CWebSource;
+        $this->objectUrlValid = new CWebSource("http://www.walla.co.il");
     }
     
     
     public function testWebSourceIsNull(){
-        $this->assertNull($this->object->url);
+        $this->objectNull = new CWebSource();
+        $this->assertNull($this->objectNull->getUrl());
+    }
+
+    public function testUrlIsValid(){
+        $this->assertEquals("http://www.walla.co.il", $this->objectUrlValid->getUrl());
+    }
+
+    public function testExceptionUrlIsInvalid(){
+        $this->objectUrlNotValid = new CWebSource("http://");
+        $this->setExpectedException('CException');
+        $this->objectUrlNotValid->isValidURL();
+    }
+
+    public function testGetIsArray(){
+        $this->setExpectedException('CException');
+        $this->objectUrlValid->setGetValues('check');
+      
+    }
+
+    public function testPostIsArray(){
+        $this->setExpectedException('CException');
+        $this->objectUrlValid->setGetValues('check');
+    }
+
+    public function testSet_Get_getArray(){
+        $this->assertEquals(NULL, $this->objectUrlValid->getGetValues());
+        //set Get Array with some values
+        $bla = array(1 => 'check');
+        $this->objectUrlValid->setGetValues($bla);
+        $this->assertEquals($bla, $this->objectUrlValid->getGetValues());
+    }
+    
+    public function testSet_Get_postArray(){
+        $this->assertEquals(NULL, $this->objectUrlValid->getPostValues());
+        //set Get Array with some values
+        $bla = array(1 => 'check');
+        $this->objectUrlValid->setPostValues($bla);
+        $this->assertEquals($bla, $this->objectUrlValid->getPostValues());
+    }
+
+
+    public function testIsUrlParseIsValid(){
+        //TODO check if url after parse is ok
+    }
+
+    public function testIsGetArrayParseIsValid(){
+        //TODO check if get array after parse is ok
     }
 
     /**
@@ -30,6 +79,8 @@ class CWebSourceTest extends PHPUnit_Framework_TestCase {
     protected function tearDown() {
         
     }
+
+   
 
 }
 
