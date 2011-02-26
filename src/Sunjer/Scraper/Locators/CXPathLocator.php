@@ -6,24 +6,26 @@
  */
 
 /**
- * Description of XPathLocator
+ * Description of CXPathLocator
  *
  * @author tamir
  */
-class XPathLocator implements ILocator{
-    protected  $xpathXql;
-    
+class CXPathLocator implements ILocator{
+    protected  $_xpathQuery;
+        
     public function __construct($xql){
         $this->setDocumentLocator($xql);
     }
 
 
     public function getDocumentLocator() {
-        return $this->xpathXql;
+        return $this->_xpathQuery;
     }
     
     public function setDocumentLocator($xql) {
-        $this->xpathXql = $xql;
+        if(!is_string($xql))
+            throw new CException ('Xpath query must be defined');
+        $this->_xpathQuery = $xql;
     }
 }
 

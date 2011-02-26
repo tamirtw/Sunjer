@@ -15,12 +15,16 @@ class CWebSourceTest extends PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->object = new CWebSource;
+//        $this->object = new CWebSource("http://www.bla.com");
     }
     
     
     public function testWebSourceIsNull(){
-        $this->assertNull($this->object->url);
+//        $this->assertNull($this->object->url);
+    }
+    
+    public function testGetUrl(){
+//        $this->assertEquals("http://www.bla.com",$this->object->getUrl());
     }
 
     /**

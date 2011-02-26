@@ -11,7 +11,7 @@
  * @author tamir
  */
 class CCSSLocator implements ILocator{
-    protected  $cssSelector;
+    protected  $_cssSelector;
     
     public function __construct($cssSelector){
         $this->setDocumentLocator($cssSelector);
@@ -19,11 +19,13 @@ class CCSSLocator implements ILocator{
 
 
     public function getDocumentLocator() {
-        return $this->cssSelector;
+        return $this->_cssSelector;
     }
     
     public function setDocumentLocator($cssSelector) {
-        $this->cssSelector = $cssSelector;
+        if(!is_string($cssSelector))
+            throw new CException ('Css selector must be defined');
+        $this->_cssSelector = $cssSelector;
     }
 }
 
