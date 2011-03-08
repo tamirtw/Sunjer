@@ -1,0 +1,23 @@
+{
+    "appID":"134",
+    "url":{
+            "domain":"http://www.walla.co.il",
+            "get":[{"a":"aa"},{"b":"bb"}],
+            "post":[{"c":"cc"},{"d":"dd"},{"e":"ee"}]
+           },
+    "selectors":[{
+            "id":"0",
+            "type":"css",
+            "selector":"bla",
+            "filter":""
+                },
+            {
+            "id":"1",
+            "type":"xpath",
+            "selector":"xbla",
+            "filter":"string to int"
+            }],
+    "beforeAction":"beforaction test",
+    "afterAction":"afteraction test"
+}
+
