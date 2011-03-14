@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-
 /**
  * untitledModel - base/class.CException.php
  *
@@ -16,16 +14,12 @@ error_reporting(E_ALL);
  * @package base
  */
 
-if (0 > version_compare(PHP_VERSION, '5')) {
-    die('This file was generated for PHP 5');
-}
 
 /**
  * include base_CErrorHandeler
  *
  * @author Tamir Twina, <tamirtw@gmail.com>
- */
-require_once('base/class.CErrorHandeler.php');
+*/
 
 /* user defined includes */
 // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:000000000000094E-includes begin
@@ -42,7 +36,7 @@ require_once('base/class.CErrorHandeler.php');
  * @author Tamir Twina, <tamirtw@gmail.com>
  * @package base
  */
-class base_CException
+class CException
 {
     // --- ASSOCIATIONS ---
     // generateAssociationEnd : 

@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
+
 
 /**
  * untitledModel - class.Sunjer.php
@@ -15,16 +15,13 @@ error_reporting(E_ALL);
  * @author Tamir Twina, <tamirtw@gmail.com>
  */
 
-if (0 > version_compare(PHP_VERSION, '5')) {
-    die('This file was generated for PHP 5');
-}
 
 /**
  * include base_CApplication
  *
  * @author Tamir Twina, <tamirtw@gmail.com>
  */
-require_once('base/class.CApplication.php');
+require_once('base/CApplication.php');
 
 /* user defined includes */
 // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:00000000000008E9-includes begin
@@ -52,42 +49,42 @@ class Sunjer
      *
      * @access public
      */
-    public $classMap[ null | null | null ];
+    public $classMap;
 
     /**
      * Short description of attribute _aliases
      *
      * @access public
      */
-    public $_aliases[ null | null | null ];
+    public $_aliases;
 
     /**
      * Short description of attribute _imports
      *
      * @access public
      */
-    public $_imports[ null | null | null ];
+    public $_imports;
 
     /**
      * Short description of attribute _app
      *
      * @access public
      */
-    public $_app[ null | null | null ];
+    public $_app;
 
     /**
      * Short description of attribute _logger
      *
      * @access public
      */
-    public $_logger[ null | null | null ];
+    public $_logger;
 
     /**
      * Short description of attribute _coreClasses
      *
      * @access public
      */
-    public $_coreClasses[ null | null | null ];
+    public $_coreClasses;
 
     // --- OPERATIONS ---
 
@@ -204,6 +201,8 @@ class Sunjer
      */
     public function autoload()
     {
+        require 'ClassAutoLoader.php';
+        ClassAutoLoader::load();
         // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000909 begin
         // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000909 end
     }

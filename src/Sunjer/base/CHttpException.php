@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-
 /**
  * untitledModel - base/class.CHttpException.php
  *
@@ -16,17 +14,11 @@ error_reporting(E_ALL);
  * @package base
  */
 
-if (0 > version_compare(PHP_VERSION, '5')) {
-    die('This file was generated for PHP 5');
-}
-
 /**
  * include base_CException
  *
  * @author Tamir Twina, <tamirtw@gmail.com>
  */
-require_once('base/class.CException.php');
-
 /* user defined includes */
 // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000956-includes begin
 // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000956-includes end
@@ -42,8 +34,7 @@ require_once('base/class.CException.php');
  * @author Tamir Twina, <tamirtw@gmail.com>
  * @package base
  */
-class base_CHttpException
-    extends base_CException
+class CHttpException extends CException
 {
     // --- ASSOCIATIONS ---
 

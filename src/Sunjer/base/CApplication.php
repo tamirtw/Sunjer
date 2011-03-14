@@ -1,6 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
 
 /**
  * untitledModel - base/class.CApplication.php
@@ -16,23 +15,20 @@ error_reporting(E_ALL);
  * @package base
  */
 
-if (0 > version_compare(PHP_VERSION, '5')) {
-    die('This file was generated for PHP 5');
-}
 
 /**
  * include base_CComponent
  *
  * @author Tamir Twina, <tamirtw@gmail.com>
  */
-require_once('base/class.CComponent.php');
+require_once('base/CComponent.php');
 
 /**
  * include Sunjer
  *
  * @author Tamir Twina, <tamirtw@gmail.com>
  */
-require_once('class.Sunjer.php');
+require_once('Sunjer.php');
 
 /* user defined includes */
 // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:00000000000008E7-includes begin
@@ -49,8 +45,7 @@ require_once('class.Sunjer.php');
  * @author Tamir Twina, <tamirtw@gmail.com>
  * @package base
  */
-class base_CApplication
-    extends base_CComponent
+class CApplication extends CComponent
 {
     // --- ASSOCIATIONS ---
     // generateAssociationEnd : 
@@ -62,35 +57,35 @@ class base_CApplication
      *
      * @access private
      */
-    private $_loadedComponents[ null | null | null ];
+    private $_loadedComponents;
 
     /**
      * Short description of attribute _params
      *
      * @access private
      */
-    private $_params[ null | null | null ];
+    private $_params;
 
     /**
      * Short description of attribute _basePath
      *
      * @access private
      */
-    private $_basePath[ null | null | null ];
+    private $_basePath;
 
     /**
      * Short description of attribute _language
      *
      * @access private
      */
-    private $_language[ null | null | null ];
+    private $_language;
 
     /**
      * Short description of attribute charset
      *
      * @access public
      */
-    public $charset[ null | null | null ];
+    public $charset;
 
     // --- OPERATIONS ---
 

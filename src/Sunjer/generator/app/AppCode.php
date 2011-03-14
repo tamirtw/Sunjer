@@ -1,11 +1,10 @@
 <?php
 
-
-class WebSourceCode extends CCodeModel
+class AppCode extends CCodeModel
 {
     public $warnings;
     public $template = null;
-    public $file = null; //CFileResource
+    public $file = null;
     public $status;
 
     public function  __construct($request)
@@ -22,24 +21,22 @@ class WebSourceCode extends CCodeModel
         //if validate is OK move to GenerateTemplate
         $path = $this->getTemplatePath();
         $this->generate($request, $path);
-
     }
 
     public function getTemplatePath()
     {
         //Where is the Path to the template
-        return 'default/websource.php';
+        return 'default/app.php';
     }
 
-    public function generate($request,$path)
+    public function generate($request, $path)
     {
-        //Setting values in the template
-        //TODO call RenderInternal;
+
     }
-  
+
     public function validateTemplate()
     {
-        //validateTemplate
+
     }
 
     public function successMessage()
@@ -67,7 +64,6 @@ class WebSourceCode extends CCodeModel
        echo "After Action :".$request['afterAction'];
        echo "</br>"."</br>";
     }
-
-} 
+}
 
 ?>
