@@ -12,7 +12,7 @@ abstract class CCodeModel
     protected abstract function prepare($request);
    
 
-    public function generate($request, $path)
+    public function generate($request)
     {
         
     }

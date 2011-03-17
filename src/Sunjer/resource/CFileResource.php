@@ -44,79 +44,29 @@
  */
 class CFileResource implements IResource
 {
-    // --- ASSOCIATIONS ---
-    // generateAssociationEnd :     // generateAssociationEnd : 
-
-    // --- ATTRIBUTES ---
-
-    /**
-     * Short description of attribute _file
-     *
-     * @access protected
-     */
+  
     protected $_file;
 
-    // --- OPERATIONS ---
-
-    /**
-     * Short description of method open
-     *
-     * @access public
-     * @author Tamir Twina, <tamirtw@gmail.com>
-     * @return mixed
-     */
     public function open()
     {
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000886 begin
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000886 end
+   
     }
 
-    /**
-     * Short description of method save
-     *
-     * @access public
-     * @author Tamir Twina, <tamirtw@gmail.com>
-     * @return mixed
-     */
     public function save()
     {
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000888 begin
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000888 end
+
     }
 
-    /**
-     * Short description of method asJSON
-     *
-     * @access public
-     * @author Tamir Twina, <tamirtw@gmail.com>
-     * @return mixed
-     */
-    public function asJSON()
+    public function saveAsJSON()
     {
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:00000000000008A1 begin
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:00000000000008A1 end
+
     }
 
-    /**
-     * Short description of method asXML
-     *
-     * @access public
-     * @author Tamir Twina, <tamirtw@gmail.com>
-     * @return mixed
-     */
-    public function asXML()
+    public function saveAsXML()
     {
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:00000000000008A3 begin
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:00000000000008A3 end
+
     }
 
-    /**
-     * Short description of method open
-     *
-     * @access public
-     * @author Tamir Twina, <tamirtw@gmail.com>
-     * @return mixed
-     */
-} /* end of class resource_CFileResource */
+} 
 
 ?>

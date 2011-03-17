@@ -22,7 +22,7 @@ class AppCode extends CCodeModel
         //This Function Prepare Json & Validate Values !
         //TODO ASK ELI WHY file_exists not working ?!
         if($this->validateTemplate()){
-            $this->generate($request,$this->template);
+            $this->generate($request);
         }
 
         else $this->errorMessage();
@@ -34,9 +34,9 @@ class AppCode extends CCodeModel
         return dirname(__FILE__)."/templates/default/app.php";
     }
 
-    public function generate($request,$path)
+    public function generate($request)
     {
-        $this->renderInternal($this->template);
+        $this->renderInternal($this->template,$request);
     }
 
     public function validateTemplate()
