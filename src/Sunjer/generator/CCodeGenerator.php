@@ -12,29 +12,11 @@ class CCodeGenerator
         foreach($this->code['requests'] as $request){
                 $this->generate($request);
             }
-    
     }
+    
     public function generate($request)
     {
-    //TODO $Variable Variable ! :)
-        switch ($request['generate']) {
-            case 'websource':
-                $webSource = new WebSourceCode($request);
-                break;
-            case 'model':
-                $model = new ModelCode($request);
-                break;
-            case 'scenario':
-                $app = new AppCode($request);
-                break;
-            case 'app':
-                $scenario = new ScenarioCode($request);
-                break;
-            default:
-                echo "ERROR - Unkown Class ! ! !</br>";
-                break;
-                }
-      
+        new $request['generate']($request);
     }
 
 } 

@@ -1,5 +1,5 @@
 {   "requests":[{
-            "generate":"websource",
+            "generate":"WebSourceCode",
                     "className":"?",
                     "appID":"?",
                     "url":{
@@ -10,7 +10,7 @@
             },
 
             {
-            "generate":"model",
+            "generate":"ModelCode",
                     "className":"?",
                     "appID":"?",
                     "url":{
@@ -29,7 +29,7 @@
             },
 
             {
-                    "generate":"scenario",
+                    "generate":"ScenarioCode",
                     "className":"?",
                     "OnePoint":[
                                 {"post":[{"key":"value"},{"key":"value"}]},
@@ -38,7 +38,7 @@
             },
 
             {
-            "generate":"app",
+            "generate":"AppCode",
                     "className":"?"
             }
 

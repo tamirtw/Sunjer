@@ -10,7 +10,11 @@ class WebSourceCode extends CCodeModel
 
     public function  __construct($request)
     {
-//        $this->printJsonValues($request);
+        $this->warning = array();
+        $this->template = $this->getTemplatePath();
+        //$this->file = new CFileResource();
+        $this->status = FALSE;
+        
         $this->prepare($request);
     }
 
@@ -19,10 +23,10 @@ class WebSourceCode extends CCodeModel
         //This Function Prepare Json & Validate Values !
         //TODO ASK ELI WHY file_exists not working ?!
         if($this->validateTemplate()){
-            $this->generate($request, $this->getTemplatePath());
+            $this->generate($request,$this->template);
         }
         
-        else $this->errorMessage("CFT");
+        else $this->errorMessage();
     }
 
     public function getTemplatePath()
@@ -33,17 +37,12 @@ class WebSourceCode extends CCodeModel
 
     public function generate($request,$path)
     {
-        echo "here";
-         $this->renderInternal($this->getTemplatePath());
-        //$render->renderInternal($path,$request);
-        //Setting values in the template
-        //TODO call RenderInternal;
+        $this->renderInternal($this->template);
     }
   
     public function validateTemplate()
     {
-        //validateTemplate
-        return file_exists($this->getTemplatePath());
+        return file_exists($this->template);
       
     }
 
@@ -54,15 +53,8 @@ class WebSourceCode extends CCodeModel
 
     public function errorMessage($error)
     {
-        switch ($error){
-            case 'CFT':
-                echo 'Cannot Find Template<br>';
-                break;
-            default:
-                echo 'Unkown Error<br>';
-                break;
-
-        }
+     array_push($warning,$error);
+     //TODO Call errorRender And show the error/e to user
     }
 
     public function printJsonValues($request)
@@ -80,22 +72,7 @@ class WebSourceCode extends CCodeModel
        echo "After Action :".$request['afterAction'];
        echo "</br>"."</br>";
     }
-    public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
-    {
-           if(is_array($_data_))
-                    extract($_data_,EXTR_PREFIX_SAME,'data');
-            else
-                    $data=$_data_;
-            if($_return_)
-            {
-                    ob_start();
-                    ob_implicit_flush(false);
-                    require($_viewFile_);
-                    return ob_get_clean();
-            }
-            else
-                    require($_viewFile_);
-    }
+
 
 
 } 

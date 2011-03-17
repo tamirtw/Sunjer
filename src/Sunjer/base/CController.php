@@ -24,10 +24,22 @@ abstract class CController extends CApplicationComponent
      * @author Tamir Twina, <tamirtw@gmail.com>
      * @return mixed
      */
-    public function renderInternal()
+    public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
     {
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000872 begin
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000872 end
+        echo "bla";
+                if(is_array($_data_))
+                        extract($_data_,EXTR_PREFIX_SAME,'data');
+                else
+                        $data=$_data_;
+                if($_return_)
+                {
+                        ob_start();
+                        ob_implicit_flush(false);
+                        require($_viewFile_);
+                        return ob_get_clean();
+                }
+                else
+                        require($_viewFile_);
     }
 
     /**

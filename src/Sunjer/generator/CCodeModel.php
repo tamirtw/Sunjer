@@ -8,7 +8,6 @@ abstract class CCodeModel
     public $file = null;
     public $status;
 
-    
 
     protected abstract function prepare($request);
    
@@ -45,7 +44,6 @@ abstract class CCodeModel
 
     public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
     {
-        echo "bla";
                 if(is_array($_data_))
                         extract($_data_,EXTR_PREFIX_SAME,'data');
                 else

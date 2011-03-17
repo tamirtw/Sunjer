@@ -117,25 +117,6 @@ class CFileResource implements IResource
      * @author Tamir Twina, <tamirtw@gmail.com>
      * @return mixed
      */
-    public function open()
-    {
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000923 begin
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000923 end
-    }
-
-    /**
-     * Short description of method save
-     *
-     * @access public
-     * @author Tamir Twina, <tamirtw@gmail.com>
-     * @return mixed
-     */
-    public function save()
-    {
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000925 begin
-        // section 10-10--91-60-7f09995f:12e75e0bc39:-8000:0000000000000925 end
-    }
-
 } /* end of class resource_CFileResource */
 
 ?>

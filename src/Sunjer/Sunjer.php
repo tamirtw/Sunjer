@@ -25,7 +25,6 @@ class Sunjer
 
     public function createWebApplication()
     {
-        echo "Web Application\n";
         $createWebApp = new CCodeGenerator('generator/jsonExampleFile/Structure.json');
     }
 

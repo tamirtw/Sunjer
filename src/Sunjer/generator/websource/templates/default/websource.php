@@ -1,4 +1,3 @@
-<?php echo 'bla'; ?>
 /*
     **** WebSource Template ****
     Created By Sunjer-Project ! 
