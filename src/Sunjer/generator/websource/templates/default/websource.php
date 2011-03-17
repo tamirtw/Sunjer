@@ -1,10 +1,11 @@
+<?php echo 'bla'; ?>
 /*
     **** WebSource Template ****
     Created By Sunjer-Project ! 
     Date <?php echo date("F j, Y, g:i a"); ?> 
 */
 
-class <?php echo $requset['generate']; ?> {
+class bla {
     
     public $url;
     public $get;

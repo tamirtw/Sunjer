@@ -10,7 +10,7 @@ class ModelCode extends CCodeModel
     public function  __construct($request)
     {
 //        $this->file = new CFileResource;
-        $this->printJsonValues($request);
+//        $this->printJsonValues($request);
         $this->prepare($request);
 
     }

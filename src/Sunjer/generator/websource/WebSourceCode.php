@@ -10,29 +10,32 @@ class WebSourceCode extends CCodeModel
 
     public function  __construct($request)
     {
-//        $this->file = new CFileResource;
-        $this->printJsonValues($request);
+//        $this->printJsonValues($request);
         $this->prepare($request);
-
     }
 
     protected function prepare($request)
     {
         //This Function Prepare Json & Validate Values !
-        //if validate is OK move to GenerateTemplate
-        $path = $this->getTemplatePath();
-        $this->generate($request, $path);
-
+        //TODO ASK ELI WHY file_exists not working ?!
+        if($this->validateTemplate()){
+            $this->generate($request, $this->getTemplatePath());
+        }
+        
+        else $this->errorMessage("CFT");
     }
 
     public function getTemplatePath()
     {
         //Where is the Path to the template
-        return 'default/websource.php';
+        return dirname(__FILE__)."/templates/default/websource.php";
     }
 
     public function generate($request,$path)
     {
+        echo "here";
+         $this->renderInternal($this->getTemplatePath());
+        //$render->renderInternal($path,$request);
         //Setting values in the template
         //TODO call RenderInternal;
     }
@@ -40,16 +43,26 @@ class WebSourceCode extends CCodeModel
     public function validateTemplate()
     {
         //validateTemplate
+        return file_exists($this->getTemplatePath());
+      
     }
 
     public function successMessage()
     {
-
+        echo "This Template Was Create Succsefully"."<br>"."<br>";
     }
 
-    public function errorMessage()
+    public function errorMessage($error)
     {
+        switch ($error){
+            case 'CFT':
+                echo 'Cannot Find Template<br>';
+                break;
+            default:
+                echo 'Unkown Error<br>';
+                break;
 
+        }
     }
 
     public function printJsonValues($request)
@@ -67,6 +80,23 @@ class WebSourceCode extends CCodeModel
        echo "After Action :".$request['afterAction'];
        echo "</br>"."</br>";
     }
+    public function renderInternal($_viewFile_,$_data_=null,$_return_=false)
+    {
+           if(is_array($_data_))
+                    extract($_data_,EXTR_PREFIX_SAME,'data');
+            else
+                    $data=$_data_;
+            if($_return_)
+            {
+                    ob_start();
+                    ob_implicit_flush(false);
+                    require($_viewFile_);
+                    return ob_get_clean();
+            }
+            else
+                    require($_viewFile_);
+    }
+
 
 } 
 
