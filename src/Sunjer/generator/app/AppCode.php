@@ -17,15 +17,19 @@ class AppCode extends CCodeModel
         $this->prepare($request);
     }
 
-    protected function prepare($request)
+    public function prepare($request)
     {
         //This Function Prepare Json & Validate Values !
         //TODO ASK ELI WHY file_exists not working ?!
         if($this->validateTemplate()){
             $this->generate($request);
+            return true;
         }
 
-        else $this->errorMessage();
+        else {
+            $this->errorMessage();
+            return false;
+        }
     }
 
     public function getTemplatePath()
@@ -36,7 +40,8 @@ class AppCode extends CCodeModel
 
     public function generate($request)
     {
-        $this->renderInternal($this->template,$request);
+        $newTemplate = $this->renderInternal($this->template,$request,true);
+        return;
     }
 
     public function validateTemplate()
@@ -48,11 +53,13 @@ class AppCode extends CCodeModel
     public function successMessage()
     {
         echo "This Template Was Create Succsefully"."<br>"."<br>";
+        return;
     }
 
     public function errorMessage($error)
     {
      array_push($warning,$error);
+     return;
      //TODO Call errorRender And show the error/e to user
     }
 
