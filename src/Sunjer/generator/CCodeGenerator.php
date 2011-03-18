@@ -27,6 +27,7 @@ class CCodeGenerator
     }
 
     public function statusAfterGenerate(){
+        echo "Status : Foreach Request  (Type,Name) : True if Success , False If Faliure Generate Class !<br><br><br>";
         print_r($this->code);
            
     }

@@ -38,7 +38,7 @@ class ModelCode extends CCodeModel
 
     public function generate($request)
     {
-        $newTemplate = $this->renderInternal($this->template,$request,true);
+        $this->file = $this->renderInternal($this->template,$request,true);
         return;
     }
 
@@ -51,20 +51,28 @@ class ModelCode extends CCodeModel
     public function successMessage()
     {
         echo "This Template Was Create Succsefully"."<br>"."<br>";
-        return;
     }
 
     public function errorMessage($error)
     {
-        array_push($warning,$error);
-        return;
-
      //TODO Call errorRender And show the error/e to user
     }
 
     public function printJsonValues($request)
     {
-
+       echo $request['generate']."</br>";
+       echo "className: ".$request['className']."</br>";
+       echo "appID :".$request['appID'];
+       echo "</br>"."</br>"."url :";
+       var_dump($request['url']);
+       echo "</br>"."selectors : ";
+       var_dump($request['selectors']);
+       echo "</br>"."</br>";
+       echo "Before Action :".$request['beforeAction'];
+       echo "</br>"."</br>";
+       echo "After Action :".$request['afterAction'];
+       echo "</br>"."</br>";
+       return;
     }
 
 

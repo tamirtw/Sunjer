@@ -9,9 +9,9 @@
 
 class <?php echo $_data_['className']; ?> implements IWebSource{
 
-    public $url;
-    public $get;
-    public $post;
+    public $url = <?php echo $_data_['url']['domain']; ?>;
+    public $get = <?php var_dump($_data_['url']['get']); ?>;
+    public $post= <?php var_dump($_data_['url']['post']); ?>;
 
     public function __construct($url,$get,$post){
 
