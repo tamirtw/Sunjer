@@ -20,10 +20,11 @@ class CCodeGenerator
 
     public function generate($request)
     {
-        $GClass = new $request['generate']();
+        $GClass = new $request['generate']($request);
         $status = $GClass->prepare($request);
 
         $this->code[$request['generate'].",".$request['className']] = ($status ? "True":"False");
+        
     }
 
     public function statusAfterGenerate(){

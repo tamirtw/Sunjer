@@ -1,4 +1,3 @@
-<br><br>
 /*
 
 ***    **** WebSource Template ****
@@ -29,7 +28,7 @@ class <?php echo $_data_['className']; ?> implements IWebSource{
 
     public function setGetArray($get){
 
-        $this->get = $get;<br>
+        $this->get = $get;
 
     }
 

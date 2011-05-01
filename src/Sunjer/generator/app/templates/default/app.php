@@ -1,3 +1,11 @@
-<?php echo $_data_['generate']; ?>
+<?php 
+     $path = getcwd();
+     $projectFolder = $path."/".$_data_['projectName'];
 
-<br>Creating new Application !<br><br>
+     if(!is_dir($_data_['projectName'])){
+     mkdir($path."/".$_data_['projectName'], 0700);
+     mkdir($projectFolder."/Control", 0700);
+     mkdir($projectFolder."/Model", 0700);
+     mkdir($projectFolder."/View", 0700);
+     }
+?>

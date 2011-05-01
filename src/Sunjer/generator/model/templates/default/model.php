@@ -12,7 +12,6 @@ class <?php echo $_data_['className']; ?> implements IModel{
     protected $websource;
 
     public function __construct(){
-        //TODO check if used exsiting websource or want to create new one .
         $this->webSource = new WebSourceCode(<?php echo $_data_['url']['domain']; ?>,<?php var_dump($_data_['url']['get']); ?>,<?php var_dump($_data_['url']['post']);?>);
     }
 
@@ -21,9 +20,6 @@ class <?php echo $_data_['className']; ?> implements IModel{
     }
 
     public function getLocators(){
-    }
-
-    public function filters(){
     }
 
     public function afterAction(){

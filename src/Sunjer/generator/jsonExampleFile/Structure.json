@@ -29,9 +29,13 @@
             },
 
             {
-                    "generate":"ScenarioCode",
+            "generate":"ScenarioCode",
                     "className":"?",
-                    "OnePoint":[
+                    "scenarios":[
+                                {"post":[{"key":"value"},{"key":"value"}]},
+                                {"get":[{"key":"value"},{"key":"value"}]}
+                                ],
+                    "N-Point" : [
                                 {"post":[{"key":"value"},{"key":"value"}]},
                                 {"get":[{"key":"value"},{"key":"value"}]}
                                 ]
@@ -39,7 +43,10 @@
 
             {
             "generate":"AppCode",
-                    "className":"?"
+                    "className":"?",
+                    "path":"?",
+                    "projectName":"new_project"
+
             }
 
             ]

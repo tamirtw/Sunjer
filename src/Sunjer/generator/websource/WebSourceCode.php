@@ -19,7 +19,6 @@ class WebSourceCode extends CCodeModel
     public function prepare($request)
     {
         //This Function Prepare Json & Validate Values !
-        //TODO ASK ELI WHY file_exists not working ?!
         if($this->validateTemplate()){
             $this->generate($request);
             return true;
@@ -33,13 +32,13 @@ class WebSourceCode extends CCodeModel
 
     public function getTemplatePath()
     {
-        //Where is the Path to the template
         return dirname(__FILE__)."/templates/default/websource.php";
     }
 
     public function generate($request)
     {
         $this->file = $this->renderInternal($this->template,$request,true);
+        //echo $this->file;
         return;
     }
   

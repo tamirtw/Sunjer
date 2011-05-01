@@ -39,6 +39,7 @@ class ScenarioCode extends CCodeModel
     public function generate($request)
     {
         $newTemplate = $this->renderInternal($this->template,$request,true);
+        //echo $newTemplate;
         return;
     }
 
