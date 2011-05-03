@@ -20,9 +20,27 @@
                            },
                     "selectors":[{
                             "id":"1",
-                            "type":"?",
-                            "selector":"?",
+                            "type":"CSS",
+                            "selector":"#tsyImageDiv a img",
+                            "filter":"bla"
+                                },
+                            {
+                            "id":"2",
+                            "type":"XPATH",
+                            "selector":"td div img",
+                            "filter":"dex"
+                                },
+                            {
+                            "id":"3",
+                            "type":"CSS",
+                            "selector":"a.text11.upnvl img",
                             "filter":""
+                                },
+                            {
+                            "id":"4",
+                            "type":"XPATH",
+                            "selector":"tr td div",
+                            "filter":"filterfilter"
                                 }],
                     "beforeAction":"?",
                     "afterAction":"?"

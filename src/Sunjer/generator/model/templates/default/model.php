@@ -1,4 +1,3 @@
-<br><br>
 /*
 
 ***    **** Model Template ****
@@ -18,10 +17,13 @@ class <?php echo $_data_['className']; ?> implements IModel{
     public function beforeAction(){
          <?php echo $_data_['beforeAction']; ?>
     }
-
+    <br><br><br><br><br><br><br>
     public function getLocators(){
+       <?php
+            foreach ($_data_['selectors'] as $selector){?>
+            new <?php echo $selector['type']."Locator('".$selector['selector']."');<br>";} ?>
     }
-
+    <br><br><br><br><br><br><br>
     public function afterAction(){
         <?php echo $_data_['afterAction']; ?>
     }
@@ -29,4 +31,3 @@ class <?php echo $_data_['className']; ?> implements IModel{
 
 }
 
-<br><br>

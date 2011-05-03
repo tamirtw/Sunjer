@@ -18,7 +18,6 @@ class ModelCode extends CCodeModel
     public function prepare($request)
     {
         //This Function Prepare Json & Validate Values !
-        //TODO ASK ELI WHY file_exists not working ?!
         if($this->validateTemplate()){
             $this->generate($request);
             return true;
@@ -39,6 +38,7 @@ class ModelCode extends CCodeModel
     public function generate($request)
     {
         $this->file = $this->renderInternal($this->template,$request,true);
+        echo $this->file;
         return;
     }
 
