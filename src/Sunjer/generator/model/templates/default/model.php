@@ -17,13 +17,17 @@ class <?php echo $_data_['className']; ?> implements IModel{
     public function beforeAction(){
          <?php echo $_data_['beforeAction']; ?>
     }
-    <br><br><br><br><br><br><br>
+    
     public function getLocators(){
+        return array(
        <?php
-            foreach ($_data_['selectors'] as $selector){?>
-            new <?php echo $selector['type']."Locator('".$selector['selector']."');<br>";} ?>
+       foreach ($_data_['selectors'] as $selector){?>
+            <?php
+            //if(false){
+                  ?>new<?php echo "'".$selector['name']."'=>".$selector['type']."Locator('".$selector['selector']."'),<br>";} ?>
+            <?php echo 'null );'; ?>
     }
-    <br><br><br><br><br><br><br>
+    
     public function afterAction(){
         <?php echo $_data_['afterAction']; ?>
     }

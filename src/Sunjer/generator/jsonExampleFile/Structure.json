@@ -19,24 +19,28 @@
                             "post":[{"?":"?"},{"?":"?"}]
                            },
                     "selectors":[{
+                            "name":"?",
                             "id":"1",
                             "type":"CSS",
                             "selector":"#tsyImageDiv a img",
                             "filter":"bla"
                                 },
                             {
+                            "name":"?",
                             "id":"2",
                             "type":"XPATH",
                             "selector":"td div img",
                             "filter":"dex"
                                 },
                             {
+                            "name":"?",
                             "id":"3",
                             "type":"CSS",
                             "selector":"a.text11.upnvl img",
                             "filter":""
                                 },
                             {
+                            "name":"?",
                             "id":"4",
                             "type":"XPATH",
                             "selector":"tr td div",
