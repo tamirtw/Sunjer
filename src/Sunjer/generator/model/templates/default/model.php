@@ -24,9 +24,19 @@ class <?php echo $_data_['className']; ?> implements IModel{
        foreach ($_data_['selectors'] as $selector){?>
             <?php
             //if(false){
-                  ?>new<?php echo "'".$selector['name']."'=>".$selector['type']."Locator('".$selector['selector']."'),<br>";} ?>
+                  ?>new<?php echo "'".$selector['name']."'=>".$selector['type']."Locator('".$selector['selector']."'),";} ?>
             <?php echo 'null );'; ?>
     }
+    <?php
+        foreach ($_data_['selectors'] as $selector){
+            if($selector['filter']!=null){?>
+                public function <?php echo $selector['name']."Filter(){";
+                echo $selector['filter'].";}";
+
+            }
+
+    }?>
+    
     
     public function afterAction(){
         <?php echo $_data_['afterAction']; ?>
