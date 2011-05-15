@@ -1,0 +1,16 @@
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+{
+  "name": "Sunjer-Project Extension",
+  "version": "1.0",
+  "description": "Data Scarpping",
+  "browser_action": {
+    "default_icon": "images/BrowserActionIcon.png",
+    "popup": "main.html"
+  },
+  "permissions": [
+    "http://api.flickr.com/"
+  ]
+}

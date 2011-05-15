@@ -1,0 +1,100 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="drillDownMenu/jquery.uipod.js"></script>
+    
+
+
+    <link rel="stylesheet" type="text/css" href="http://jqueryui.com/themeroller/css/parseTheme.css.php?ffDefault=Arial,+sans-serif&fwDefault=bold&fsDefault=1.3em&cornerRadius=4px&bgColorHeader=0b3e6f&bgTextureHeader=08_diagonals_thick.png&bgImgOpacityHeader=15&borderColorHeader=0b3e6f&fcHeader=f6f6f6&iconColorHeader=98d2fb&bgColorContent=111111&bgTextureContent=12_gloss_wave.png&bgImgOpacityContent=20&borderColorContent=000000&fcContent=d9d9d9&iconColorContent=9ccdfc&bgColorDefault=333333&bgTextureDefault=09_dots_small.png&bgImgOpacityDefault=20&borderColorDefault=333333&fcDefault=ffffff&iconColorDefault=9ccdfc&bgColorHover=00498f&bgTextureHover=09_dots_small.png&bgImgOpacityHover=40&borderColorHover=222222&fcHover=ffffff&iconColorHover=ffffff&bgColorActive=292929&bgTextureActive=01_flat.png&bgImgOpacityActive=40&borderColorActive=096ac8&fcActive=75abff&iconColorActive=00498f&bgColorHighlight=0b58a2&bgTextureHighlight=10_dots_medium.png&bgImgOpacityHighlight=30&borderColorHighlight=052f57&fcHighlight=ffffff&iconColorHighlight=ffffff&bgColorError=a32d00&bgTextureError=09_dots_small.png&bgImgOpacityError=30&borderColorError=cd0a0a&fcError=ffffff&iconColorError=ffffff&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px"></link>
+    
+
+    <script type="text/javascript">
+            $(document).ready(function() {
+                    $('#boxMoreInfo').uiPod({
+                            rootTitle: 'More Info',
+                            duration: 250,
+                            height: 'auto',
+                            useSideScroller: true,
+                            fnAfter: function() {
+                                    //$.ddMenu.urlHelper('currentPageName');
+                            }
+                    });
+            });
+    </script>
+
+    <!-- style for drill down menu -->
+    <style>
+            .MainMenuItem
+            {
+                    font-size: 14px;
+                    background-image: none;
+            }
+            .MainMenuItem:hover
+            {
+                    background-position: 100% 100% ! important;
+                    background-color: Transparent ! important;
+            }
+    </style>
+  </head>
+
+  <body>
+		<div style="width: 250px;">
+			<ul id="boxMoreInfo">
+				<li>
+				  <div>Customer Service</div>
+				  <ul>
+					<li><a href="t-contact.aspx">Contact Us</a></li>
+					<li><a href="t-faq.aspx">FAQs</a></li>
+					<li><a href="t-hoursholidays.aspx">Hours and Holidays</a></li>
+					<li><a href="t-paymentoptions.aspx">Payment Options</a></li>
+					<li>
+					  <div>Policies</div>
+					  <ul>
+						<li><a href="t-backorder.aspx">Backorder Policy</a></li>
+						<li><a href="t-gov.aspx">Our Government Identification Codes</a></li>
+						<li><a href="t-privacy.aspx">Privacy Policy</a></li>
+						<li><a href="t-returns.aspx">Returns Policy</a></li>
+					  </ul>
+					</li>
+					<li><a href="t-shipping.aspx">Shipping Info</a></li>
+				  </ul>
+				</li>
+				<li>
+				  <div>Guides</div>
+				  <ul>
+					<li><a href="e-page.connectorguide.aspx">Connector Guide</a></li>
+					<li><a href="e-page.hdmiqa.aspx">HDMI Question and Answer</a></li>
+					<li><a href="e-page.hdtypes.aspx">Hi-Def Video Types Guide</a></li>
+					<li><a href="t-about.aspx">How So Inexpensive???</a></li>
+					<li><a href="e-page.staff.aspx">Meet the Staff</a></li>
+					<li><a href="e-page.usbcameras.aspx">USB Camera Guide</a></li>
+					<li><a href="e-page.videocompatibility.aspx">Video Compatibility Guide</a></li>
+				  </ul>
+				</li>
+				<li>
+				  <div>My Account</div>
+				  <ul>
+					<li><a href="account.aspx">Account Info</a></li>
+					<li><a href="account.aspx#imgAddressbook">Address Book</a></li>
+					<li><a href="shoppingcart.aspx">Cart</a></li>
+					<li><a href="account.aspx#OrderHistory">Orders</a></li>
+					<li><a href="wishlist.aspx">Wishlist</a></li>
+				  </ul>
+				</li>
+				<li><a href="t-paymentoptions.aspx">Payment Options</a></li>
+				<li><a href="e-page.ordertrack.aspx">Order Tracking</a></li>
+				<li><a href="t-testimonials.aspx">Testimonials</a></li>
+			 </ul>
+		 </div>
+	</body>
+
+</html>
