@@ -38,7 +38,7 @@ class ModelCode extends CCodeModel
     public function generate($request)
     {
         $this->file = $this->renderInternal($this->template,$request,true);
-        echo $this->file;
+        //echo $this->file;
         return;
     }
 

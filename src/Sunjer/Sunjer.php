@@ -23,9 +23,11 @@ class Sunjer
         $this->$Application();
     }
 
-    public function createWebApplication()
+    public function createWebApplication($request)
     {
+//        $createWebApp = new CCodeGenerator($request);
         $createWebApp = new CCodeGenerator('generator/jsonExampleFile/Structure.json');
+        
     }
 
     public function createConsoleApplication()

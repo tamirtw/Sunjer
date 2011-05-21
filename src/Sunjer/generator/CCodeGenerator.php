@@ -14,6 +14,7 @@ class CCodeGenerator
                 $this->generate($request);
                 $this->code[$request['generate'].",".$request['className']];
             }
+        //return json_encode($this->code);
         $this->statusAfterGenerate();
 
     }

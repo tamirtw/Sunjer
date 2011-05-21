@@ -10,7 +10,7 @@
         $sunjerManual = new CController();
         $sunjerManual->renderInternal('/base/DConsoleManual.php');
     }
-    
+
 
     if (isset($_SERVER['SERVER_NAME'])){
         $Sunjer->createApplication('createWebApplication');
@@ -19,6 +19,7 @@
     else {
         $Sunjer->createApplication('createConsoleApplication');
     }
+
 ?>
 
 
